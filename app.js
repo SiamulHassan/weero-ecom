@@ -3,9 +3,9 @@ const express = require("express");
 const cors = require("cors");
 const dbConnection = require("./dbConfig/mongoDbConfig");
 const AppError = require("./utils/appError");
+const captureErrGlobally = require("./controllers/globalErrController");
 
 // requiring routes
-const captureErrGlobally = require("./controllers/globalErrController");
 const userRouter = require("./routes/userRoute");
 
 // db connection
