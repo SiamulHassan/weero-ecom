@@ -5,4 +5,7 @@ const userController = require("../controllers/userController");
 userRouter.post("/", userController.createUser);
 //////////////////// GET USER
 userRouter.get("/", userController.getUser);
+//////////////////// ADD PRODUCT TO WISHLIST
+userRouter.post("/:userId/wishlist", userController.addWishList);
+
 module.exports = userRouter;
