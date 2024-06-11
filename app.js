@@ -7,6 +7,7 @@ const captureErrGlobally = require("./controllers/globalErrController");
 
 // requiring routes
 const userRouter = require("./routes/userRoute");
+const productRouter = require("./routes/productRoute");
 
 // db connection
 dbConnection();
@@ -18,6 +19,7 @@ app.use(express.json());
 
 // app routes
 app.use("/api/v1/user", userRouter);
+app.use("/api/v1/product", productRouter);
 
 // if no route matchs
 app.use("*", (req, res, next) => {
