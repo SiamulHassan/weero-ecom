@@ -18,3 +18,11 @@ exports.createProduct = catchAsyncErr(async (req, res, next) => {
     data: createdProduct,
   });
 });
+///////////////////// GETTING PRODUCT
+exports.getProduct = catchAsyncErr(async (req, res, next) => {
+  const products = await Product.find();
+  res.status(201).json({
+    status: "success",
+    data: products,
+  });
+});
