@@ -17,15 +17,17 @@ exports.createUser = catchAsyncErr(async (req, res, next) => {
     data: createdUser,
   });
 });
-///////////////// GET USER
+
+////////////////////////// GET USER
 exports.getUser = catchAsyncErr(async (req, res, next) => {
   const users = await User.find();
-  res.status(201).json({
+  res.status(200).json({
     status: "success",
     data: users,
   });
 });
-///////////////// ADD TO WISHLIST
+
+///////////////////////// ADD TO WISHLIST
 exports.addWishList = catchAsyncErr(async (req, res, next) => {
   const { userId } = req.params;
   const { productId } = req.body;
@@ -50,6 +52,7 @@ exports.addWishList = catchAsyncErr(async (req, res, next) => {
     data: user,
   });
 });
+
 ///////////////// INTERESTED IN PRODUCTS BASED ON USER'S WISHLIST
 exports.interestedIn = catchAsyncErr(async (req, res, next) => {
   const { userId } = req.params;
